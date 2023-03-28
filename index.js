@@ -27,6 +27,7 @@ class Game {
 		} else {
 			this.price = `€${this.price.slice(0, -2)}.${this.price.slice(-2)}`;
 		}
+        
 	}
 	async getDetails() {
 		if (this.details) return this.details;
@@ -97,15 +98,18 @@ const modalContent = document.querySelector(".modal-content");
 
 const showGame = (game) => {
 	game.getDetails().then((data) => {
+        console.log(data)
 		modal.style.display = "flex";
 		modalContent.innerHTML = `
-        <img src="${game.img}" alt="${game.name}"/>
+        <img src="${data.header_image}" alt="${data.name}"/>
         `;
+
         data.screenshots.forEach(screenshot => {
             modalContent.innerHTML += `<img src="${screenshot.path_full}" alt="${game.name}" style="width: 40vw"/>`
         })
-        modalContent.innerHTML += `<h3>${game.name}</h3>
-        <p>${game.price}</p>
+        modalContent.innerHTML += `
+        <h3>${data.name}</h3>
+        <p>${data.is_free ? "Free" : game.price}</p>
         <p>${data.about_the_game}</p>`
 	});
 };
