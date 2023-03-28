@@ -1,21 +1,26 @@
-html, body{
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+:root {
+    --main-color: #1b2532;
+    --text-color: #f1f1f1;
+}
+
+html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     overflow-x: hidden;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-family: 'Poppins';
 }
 
-
-
-
-
-header{
+header {
     background: url("resources/steam-pictures/4k-space-wallpaper.jpg");
     width: 100vw;
     height: 300px;
 }
 
-nav{
+nav {
     background-color:rgba(121, 121, 186, 0.666);
     width: 70%;
     height: 50px;
@@ -23,6 +28,26 @@ nav{
     border-radius: 1%;
     display: flex;
     flex-direction: row;
-    
+    justify-content: space-around;
+}
 
+.games {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20vh;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.specials, .top-sellers, .new, .upcoming{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 80vw;
 }
