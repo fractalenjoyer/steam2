@@ -7,13 +7,16 @@ const getFeatured = async () => {
 };
 
 const moreFeatured = async () => {
-    const response = await fetch(
-        "https://steamapi.fractalenjoyer.repl.co/morefeatured"
-    );
-    const data = await response.json();
-    let games = new Games([...data.featured_win, ...data.featured_mac, ...data.featured_linux], 30);
-    return games;
-}
+	const response = await fetch(
+		"https://steamapi.fractalenjoyer.repl.co/morefeatured"
+	);
+	const data = await response.json();
+	let games = new Games(
+		[...data.featured_win, ...data.featured_mac, ...data.featured_linux],
+		30
+	);
+	return games;
+};
 
 class Game {
 	constructor(game) {
@@ -27,7 +30,6 @@ class Game {
 		} else {
 			this.price = `€${this.price.slice(0, -2)}.${this.price.slice(-2)}`;
 		}
-        
 	}
 	async getDetails() {
 		if (this.details) return this.details;
@@ -98,19 +100,20 @@ const modalContent = document.querySelector(".modal-content");
 
 const showGame = (game) => {
 	game.getDetails().then((data) => {
-        console.log(data)
+		console.log(data);
 		modal.style.display = "flex";
-		modalContent.innerHTML = `
-        <img src="${data.header_image}" alt="${data.name}"/>
-        `;
 
-        data.screenshots.forEach(screenshot => {
-            modalContent.innerHTML += `<img src="${screenshot.path_full}" alt="${game.name}" style="width: 40vw"/>`
-        })
-        modalContent.innerHTML += `
+		let div = `<img src="${data.header_image}" alt="${data.name}"/>`;
+
+		data.screenshots.forEach((screenshot) => {
+			div += `<img src="${screenshot.path_full}" alt="${game.name}" style="width: 40vw"/>`;
+		});
+
+		div += `
         <h3>${data.name}</h3>
         <p>${data.is_free ? "Free" : game.price}</p>
-        <p>${data.about_the_game}</p>`
+        <p>${data.about_the_game}</p>`;
+        modalContent.innerHTML = div;
 	});
 };
 

@@ -81,6 +81,7 @@ nav {
     background-color: var(--main-color);
     border-radius: 20px;
 }
+
 .modal-content::-webkit-scrollbar {
     display: none;
 }
