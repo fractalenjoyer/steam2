@@ -17,7 +17,7 @@ html, body {
 }
 
 header {
-    background: url("resources/steam-pictures/space-hero.jpg");
+    background: url("/static/resources/steam-pictures/space-hero.jpg");
     width: 100vw;
     height: 300px;
     background-size: cover;

@@ -1,0 +1,52 @@
+{% import "macros" as macros %} {% extends "base" %} {% block content %}
+<script defer src="/static/scripts/index.js"></script>
+<header>
+	<nav>
+		<i class="fa-brands fa-steam"></i>
+		<p>Store</p>
+		<p>Download</p>
+		<p>About</p>
+		<p>Contact us</p>
+		<div class="search-container">
+			<input id="search" type="text" placeholder="Search" />
+			<i class="fa-solid fa-magnifying-glass"></i>
+		</div>
+	</nav>
+</header>
+<main>
+	<div class="modal">
+		<div class="modal-content"></div>
+	</div>
+	<section class="games">
+		<h1 class="headerstyle">S P E C I A L S</h1>
+		<div class="specials">
+			{{ macros::format_games(games=specials) }}
+		</div>
+	</section>
+	<section class="games">
+		<h1 class="headerstyle">
+			T O P <br />
+			S E L L E R S
+		</h1>
+		<div class="top-sellers">
+			{{ macros::format_games(games=top_sellers) }}
+		</div>
+	</section>
+	<section class="games">
+		<h1 class="headerstyle">U P C O M I N G</h1>
+		<div class="upcoming">
+			{{ macros::format_games(games=upcoming) }}
+		</div>
+	</section>
+	<section class="games">
+		<h1 class="headerstyle">
+			R E C E N T L Y <br />
+			R E L E A S E D
+		</h1>
+		<div class="new">
+			{{ macros::format_games(games=new_releases) }}
+		</div>
+	</section>
+</main>
+
+{% endblock content %}
