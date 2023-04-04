@@ -48,6 +48,10 @@ nav .fa-brands {
     margin-bottom: 20vh;
 }
 
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
 
 .card img {
     width: 100%;
