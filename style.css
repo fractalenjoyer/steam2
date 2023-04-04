@@ -4,6 +4,7 @@
     --text-color: #f1f1f1;
     --theyellowone: #ffd400;
     --lightblue: #02A9EA;
+    --theyellowone: #ffd400;
 }
 
 html, body {
@@ -50,7 +51,7 @@ nav .fa-brands {
     margin-bottom: 10vh;
 }
 
-.card:hover {
+.card img:hover {
     transform: scale(1.04);
     transition: 0.5s;
 }
@@ -112,4 +113,24 @@ nav .fa-brands {
 
 .modal-content::-webkit-scrollbar {
     display: none;
+}
+
+/*Search bar*/
+#search{
+    border: none;
+    border-radius: 20px;
+    height: 40%;
+    padding: 10px;
+    background-color: var(--main-color);
+    box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+}
+
+#search:focus{
+    outline:none;
+}
+#search:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
