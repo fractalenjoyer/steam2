@@ -100,8 +100,6 @@ nav .fa-brands {
     display: none;
 }
 
-
-
 /*Search bar*/
 #search{
     border: none;
@@ -110,10 +108,10 @@ nav .fa-brands {
     padding: 10px;
     background-color: var(--main-color);
     box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
--webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
-
+    -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
 }
+
 #search:focus{
     outline:none;
 }
