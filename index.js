@@ -129,6 +129,6 @@ search.onchange = (e) => {
 	window.location = `pages/search.html?q=${e.target.value}`;
 }
 
-// moreFeatured().then((games) => {
-//     games.placeCards(document.querySelector(".specials"))
-// })
+moreFeatured().then((games) => {
+    games.placeCards(document.querySelector(".specials"))
+})
