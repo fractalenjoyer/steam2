@@ -2,6 +2,7 @@
 :root {
     --main-color: #1b2532;
     --text-color: #f1f1f1;
+    --yellow-color: #ffd400;
 }
 
 html, body {
@@ -97,4 +98,26 @@ nav .fa-brands {
 
 .modal-content::-webkit-scrollbar {
     display: none;
+}
+
+
+
+/*Search bar*/
+#search{
+    border: none;
+    border-radius: 20px;
+    height: 40%;
+    padding: 10px;
+    background-color: var(--main-color);
+    box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+-webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+
+}
+#search:focus{
+    outline:none;
+}
+#search:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
