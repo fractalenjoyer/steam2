@@ -124,11 +124,12 @@ modal.onclick = (e) => {
 };
 
 const search = document.querySelector("#search");
-
-search.onchange = (e) => {
-	window.location = `pages/search.html?q=${e.target.value}`;
+search.onkeyup = (e) => {
+	if (e.key === "Enter") {
+		window.location = `pages/search.html?q=${e.target.value}`;
+	}
 }
 
-moreFeatured().then((games) => {
-    games.placeCards(document.querySelector(".specials"))
-})
+// moreFeatured().then((games) => {
+//     games.placeCards(document.querySelector(".specials"))
+// })
