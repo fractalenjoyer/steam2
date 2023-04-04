@@ -15,7 +15,7 @@
 </header>
 <main>
 	<div class="modal">
-		<div class="modal-content"></div>
+		<iframe src="" frameborder="0" class="modal-content"></iframe>
 	</div>
 	<section class="games">
 		<h1 class="headerstyle">S P E C I A L S</h1>
@@ -33,18 +33,18 @@
 		</div>
 	</section>
 	<section class="games">
-		<h1 class="headerstyle">U P C O M I N G</h1>
-		<div class="upcoming">
-			{{ macros::format_games(games=upcoming) }}
-		</div>
-	</section>
-	<section class="games">
 		<h1 class="headerstyle">
 			R E C E N T L Y <br />
 			R E L E A S E D
 		</h1>
 		<div class="new">
 			{{ macros::format_games(games=new_releases) }}
+		</div>
+	</section>
+	<section class="games">
+		<h1 class="headerstyle">U P C O M I N G</h1>
+		<div class="upcoming">
+			{{ macros::format_games(games=upcoming) }}
 		</div>
 	</section>
 </main>
