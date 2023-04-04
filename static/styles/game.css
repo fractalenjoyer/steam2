@@ -22,6 +22,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-inline: 10vw;
+    margin-bottom: 10vh;
 }
 
 .images {
