@@ -2,6 +2,8 @@
 :root {
     --main-color: #1b2532;
     --text-color: #f1f1f1;
+    --theyellowone: #ffd400;
+    --lightblue: #02A9EA;
 }
 
 html, body {
@@ -45,17 +47,30 @@ nav .fa-brands {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
+    transition: 0.5s;
+}
+
+.card {
     transition: 0.5s;
 }
 
 .card img {
     width: 100%;
     border-radius: 20px;
+}
+
+
+.headerstyle {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--theyellowone);
+    padding: 20px;
+    text-align: center;
 }
 
 .specials, .top-sellers, .new, .upcoming{
