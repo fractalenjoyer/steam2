@@ -53,15 +53,12 @@ nav .fa-brands {
 .card img:hover {
     transform: scale(1.04);
     transition: 0.5s;
-}
-
-.card {
-    transition: 0.5s;
-}
+} 
 
 .card img {
     width: 100%;
     border-radius: 20px;
+    transition: 0.5s;
 }
 
 
