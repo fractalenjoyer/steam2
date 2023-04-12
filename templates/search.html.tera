@@ -1,0 +1,29 @@
+{% extends "base" %}
+{% import "macros" as macros %}
+{% block content %}
+<script defer src="/static/scripts/search.js"></script>
+<header>
+	<nav>
+		<i class="fa-brands fa-steam"></i>
+		<p>Store</p>
+		<p>Download</p>
+		<p>About</p>
+		<p>Contact us</p>
+		<div class="search-container">
+			<input id="search" type="text" placeholder="Search" />
+			<i class="fa-solid fa-magnifying-glass"></i>
+		</div>
+	</nav>
+</header>
+<main>
+    <div class="modal">
+		<iframe src="" frameborder="0" class="modal-content"></iframe>
+	</div>
+    <section class="games">
+        <div class="games-inner">
+            {{ macros::format_games(games=games) }}
+        </div>
+    </section>    
+</main>
+
+{% endblock content %}

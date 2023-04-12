@@ -11,7 +11,7 @@ fn rocket() -> _ {
     rocket::build()
         .attach(Template::fairing())
         .mount("/static", FileServer::from("static"))
-        .mount("/", routes![index, game])
+        .mount("/", routes![index, game, search])
 }
 
 // Pages
@@ -67,6 +67,25 @@ async fn game(id: u64) -> Option<Template> {
     ))
 }
 
+#[get("/search/<query>")]
+async fn search(query: String) -> Option<Template> {
+    // Get data from Steam API
+    let data = get_json(&format!(
+        "https://store.steampowered.com/search/suggest?cc=SE&f=jsonfull&term={}&require_type=game,software",
+        query
+    ))
+    .await?;
+
+    Some(Template::render(
+        "search",
+        context! {
+            title: "Search",
+            style: "search.css",
+            games: data // yeah that won't work lmao,
+        },
+    ))
+}
+
 // Utility functions
 
 #[derive(Serialize, Debug)]
@@ -74,7 +93,7 @@ async fn game(id: u64) -> Option<Template> {
 struct Game {
     name: String,
     price: String,
-    image: String,
+    img: String,
     id: u32,
 }
 
@@ -85,7 +104,7 @@ fn parse_games(games: &Value) -> Vec<Game> {
             Some(Game {
                 name: x.get("name")?.as_str()?.to_string(),
                 price: format!("€{}", x.get("final_price")?.as_f64()? / 100.),
-                image: x.get("large_capsule_image")?.as_str()?.to_string(),
+                img: x.get("large_capsule_image")?.as_str()?.to_string(),
                 id: x.get("id")?.as_u64()?.try_into().ok()?,
             })
         })

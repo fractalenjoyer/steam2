@@ -2,6 +2,8 @@
 :root {
     --main-color: #1b2532;
     --text-color: #f1f1f1;
+    --theyellowone: #ffd400;
+    --lightblue: #02A9EA;
 }
 
 html, body {
@@ -14,31 +16,59 @@ html, body {
     font-family: 'Poppins';
 }
 
-main {
+header {
+    background: url("/static/resources/steam-pictures/space-hero.jpg");
+    width: 100vw;
+    height: 300px;
+    background-size: cover;
+}
+
+nav {
+    background-color: var(--main-color);
+    position: relative;
+    top: 1rem;
+    width: 750px;
+    height: 50px;
+    margin-top: 50px;
+    margin: auto;
+    border-radius: 25px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    height: 100vh;
 }
 
-.results {
+nav .fa-brands {
+    font-size: 40px;
+}
+
+/*Search bar*/
+.search-container {
     display: flex;
-    justify-content: space-between;
-    grid-gap: 10px;
-    max-width: 80vw;
-}
-
-@media only screen and (max-width: 768px) {
-    .results {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-    }
-}
-
-.card img {
-    width: 100%;
+    align-items: center;
+    border: none;
     border-radius: 20px;
+    height: 40%;
+    padding: 10px;
+    background-color: var(--main-color);
+    box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+}
+
+.search-container:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+#search {
+    color: var(--text-color);
+    background-color: #0000;
+    border: none;
+}
+
+#search:focus{
+    outline:none;
 }
 
 .modal {
@@ -65,4 +95,39 @@ main {
 
 .modal-content::-webkit-scrollbar {
     display: none;
+}
+
+.games {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+.games-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 80vw;
+}
+
+@media only screen and (max-width: 768px) {
+    .games-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, 1fr);
+    }
+}
+
+.card img:hover {
+    transform: scale(1.04);
+    transition: 0.5s;
+} 
+
+.card img {
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.5s;
 }

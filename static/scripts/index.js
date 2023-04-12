@@ -6,8 +6,13 @@ const showGame = (id) => {
     modal.style.display = "flex";
 }
 
+// would rather replace this with in-html event listener for clarity
 modal.onclick = (e) => {
-	if (e.target.classList.contains("modal")) {
-		document.querySelector(".modal").style.display = "none";
-	}
+	e.target.style.display = "none";
 };
+
+document.querySelector("#search").onkeyup = (e) => {
+	if (e.key === "Enter") {
+		window.location.href = `/search/${e.target.value}`;
+	}
+}
