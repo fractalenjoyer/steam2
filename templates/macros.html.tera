@@ -1,9 +1,0 @@
-{% macro format_games(games, type="text") %} 
-{% for game in games %}
-    <div class="card" onclick={{ "showGame(" ~ game.id ~ ")" }}>
-	    <img src="{{ game.img }}" alt="{{ game.name }}" />
-	    <h2>{{ game.name }}</h2>
-	    <p>{{ game.price }}</p>
-    </div>
-{% endfor %} 
-{% endmacro format_games %}

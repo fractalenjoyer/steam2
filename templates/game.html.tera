@@ -1,4 +1,5 @@
-{% extends "base" %}
+{% extends "global/base" %}
+{% block header %}{% endblock header %}
 {% block content %}
 <script defer src="/static/scripts/game.js"></script>
 <main>

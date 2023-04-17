@@ -1,0 +1,19 @@
+{% macro format_games(games, type="text") %} 
+{% for game in games %}
+    <div class="card" onclick='showGame("{{ game.id }}")'>
+	    <img src="{{ game.img }}" alt="{{ game.name }}" />
+	    <h2>{{ game.name }}</h2>
+	    <p>{{ game.price }}</p>
+    </div>
+{% endfor %} 
+{% endmacro format_games %}
+
+{% macro format_search(games, type="text") %}
+{% for game in games %}
+	<div class="card" onclick='showGame("{{ game.id }}")'>
+		<img src="https://cdn.akamai.steamstatic.com/steam/apps/{{ game.id }}/capsule_616x353.jpg" alt="{{ game.name }}" />
+		<h2>{{ game.name }}</h2>
+		<p>{{ game.price }}</p>
+	</div>
+{% endfor %}
+{% endmacro format_search %}
