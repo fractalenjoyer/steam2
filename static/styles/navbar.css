@@ -5,8 +5,9 @@ header {
     background-size: cover;
 }
 
-nav {
+#nav-bar {
     background-color: var(--main-color);
+    opacity: 0.9;
     position: relative;
     top: 1rem;
     width: 750px;
@@ -20,7 +21,7 @@ nav {
     align-items: center;
 }
 
-nav .fa-brands {
+#nav-bar .fa-brands {
     font-size: 40px;
 }
 
@@ -33,6 +34,7 @@ nav .fa-brands {
     height: 40%;
     padding: 10px;
     background-color: var(--main-color);
+    transition: 0.5s;
     box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
@@ -40,7 +42,7 @@ nav .fa-brands {
 
 .search-container:hover{
     transform: scale(1.1);
-    transition: 0.5s;
+    background-color: var(--theyellowone);
 }
 
 #search {

@@ -1,6 +1,6 @@
 <header>
     <link rel="stylesheet" href="/static/styles/navbar.css">
-	<nav>
+	<nav id="nav-bar">
 		<i class="fa-brands fa-steam"></i>
         <a href="/"><p>Store</p></a>
         <a href="/download"><p>Download</p></a>
