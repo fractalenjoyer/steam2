@@ -15,4 +15,4 @@ document.querySelector("#search").onkeyup = (e) => {
 	if (e.key === "Enter") {
 		window.location.href = `/search/${e.target.value}`;
 	}
-}
+}   
