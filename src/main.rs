@@ -11,7 +11,7 @@ fn rocket() -> _ {
     rocket::build()
         .attach(Template::fairing())
         .mount("/static", FileServer::from("static"))
-        .mount("/", routes![index, game, search])
+        .mount("/", routes![index, game, search, download, about, contact])
 }
 
 // Pages
@@ -30,6 +30,39 @@ async fn index() -> Option<Template> {
             new_releases: parse_games(data.get("new_releases")?.get("items")?),
             top_sellers: parse_games(data.get("top_sellers")?.get("items")?),
             upcoming: parse_games(data.get("coming_soon")?.get("items")?),
+        },
+    ))
+}
+
+#[get("/download")]
+async fn download() -> Option<Template> {
+    Some(Template::render(
+        "download",
+        context! {
+            title: "Download",
+            style: "download.css",
+        },
+    ))
+}
+
+#[get("/about")]
+async fn about() -> Option<Template> {
+    Some(Template::render(
+        "about",
+        context! {
+            title: "About",
+            style: "about.css",
+        },
+    ))
+}
+
+#[get("/contact")]
+async fn contact() -> Option<Template> {
+    Some(Template::render(
+        "contact",
+        context! {
+            title: "Contact",
+            style: "contact.css",
         },
     ))
 }
