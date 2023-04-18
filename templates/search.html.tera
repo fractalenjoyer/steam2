@@ -6,6 +6,7 @@
     <div class="modal">
 		<iframe src="" frameborder="0" class="modal-content"></iframe>
 	</div>
+    <h1 id="search-query">Results for: "{{ query }}"</h1>
     <section class="games">
         <div class="games-inner">
             {{ macros::format_search(games=games) }}

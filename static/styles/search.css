@@ -24,8 +24,12 @@
     display: none;
 }
 
+#search-query {
+    text-align: center;
+    color: var(--theyellowone);
+}
+
 .games {
-    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

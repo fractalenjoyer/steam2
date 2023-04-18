@@ -114,7 +114,8 @@ async fn search(query: String) -> Option<Template> {
         context! {
             title: "Search",
             style: "search.css",
-            games: data // yeah that won't work lmao,
+            games: data, // yeah that won't work lmao,
+            query: query,
         },
     ))
 }
