@@ -1,17 +1,24 @@
 #[macro_use]
 extern crate rocket;
 
+use std::ops::DerefMut;
+
 use rocket::serde::{json::Value, Serialize};
 use rocket::fs::FileServer;
 use rocket_dyn_templates::{context, Template};
+use rocket::State;
 
+mod cache;
+mod pages;
+use cache::Cache;
 
 #[launch]
 fn rocket() -> _ {
     rocket::build()
         .attach(Template::fairing())
+        .manage(Cache::new())
         .mount("/static", FileServer::from("static"))
-        .mount("/", routes![index, game, search, download, about, contact])
+        .mount("/", routes![index, game, search, pages::download, pages::about, pages::contact])
 }
 
 // Pages
@@ -34,47 +41,16 @@ async fn index() -> Option<Template> {
     ))
 }
 
-#[get("/download")]
-async fn download() -> Option<Template> {
-    Some(Template::render(
-        "download",
-        context! {
-            title: "Download",
-            style: "download.css",
-        },
-    ))
-}
-
-#[get("/about")]
-async fn about() -> Option<Template> {
-    Some(Template::render(
-        "about",
-        context! {
-            title: "About",
-            style: "about.css",
-        },
-    ))
-}
-
-#[get("/contact")]
-async fn contact() -> Option<Template> {
-    Some(Template::render(
-        "contact",
-        context! {
-            title: "Contact",
-            style: "contact.css",
-        },
-    ))
-}
-
 #[get("/game/<id>")]
-async fn game(id: u64) -> Option<Template> {
+async fn game(cache: &State<Cache>, id: u64) -> Option<Template> {
     // Get data from Steam API
-    let data = get_json(&format!(
-        "https://store.steampowered.com/api/appdetails?appids={}&cc=SE",
-        id
-    ))
-    .await?;
+
+    let data = cache.get(&format!("https://store.steampowered.com/api/appdetails?appids={}&cc=SE", id)).await?;
+    // let data = get_json(&format!(
+    //     "https://store.steampowered.com/api/appdetails?appids={}&cc=SE",
+    //     id
+    // ))
+    // .await?;
 
     let game = data.get(&id.to_string())?.get("data")?;
 

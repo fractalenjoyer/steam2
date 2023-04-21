@@ -6,11 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+chrono = "0.4.24"
 maud = "0.24.0"
 
 [dependencies.reqwest]
 version = "0.11.16"
-features = ["json"]
+features = ["json", "blocking"]
 
 [dependencies.rocket]
 version = "=0.5.0-rc.3"
