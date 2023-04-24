@@ -1,7 +1,7 @@
 use rocket_dyn_templates::{context, Template};
 
 #[get("/download")]
-pub async fn download() -> Option<Template> {
+pub fn download() -> Option<Template> {
     Some(Template::render(
         "download",
         context! {
@@ -12,7 +12,7 @@ pub async fn download() -> Option<Template> {
 }
 
 #[get("/about")]
-pub async fn about() -> Option<Template> {
+pub fn about() -> Option<Template> {
     Some(Template::render(
         "about",
         context! {
@@ -23,7 +23,7 @@ pub async fn about() -> Option<Template> {
 }
 
 #[get("/contact")]
-pub async fn contact() -> Option<Template> {
+pub fn contact() -> Option<Template> {
     Some(Template::render(
         "contact",
         context! {
