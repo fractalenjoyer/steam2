@@ -73,12 +73,13 @@ async fn game(cache: &State<Cache>, id: u64) -> Option<Template> {
     let game = data.get(&id.to_string())?.get("data")?;
 
     // Determine price formating
-    let price = match game.get("is_free")?.as_bool()? {
-        true => "Free".to_string(),
-        false => match game.get("price_overview") {
+    let price = if game.get("is_free")?.as_bool()? {
+        "Free".to_string()
+    } else {
+        match game.get("price_overview") {
             Some(x) => format!("€{}", x.get("final")?.as_f64()? / 100.),
             None => "Unknown".to_string(),
-        },
+        }
     };
 
     Some(Template::render(

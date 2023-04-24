@@ -12,6 +12,7 @@ html, body {
     margin: 0;
     overflow-x: hidden;
     background: url("/static/resources/steam-pictures/space-hero.jpg");
+    background-size: cover;
     color: var(--text-color);
     font-family: 'Poppins';
 }

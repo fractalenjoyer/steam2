@@ -40,21 +40,21 @@ impl Cache {
             }
         }
         drop(cache);
-        Some(self.update(url).await?)
+        self.update(url).await
     }
 
     async fn update(&self, url: &str) -> Option<Value> {
-        let data = Cache::get_json(url).await?;
+        let data = Self::get_json(url).await?;
         let mut cache = self.cache.write().await;
         cache.insert(
             url.to_string(),
             CacheItem {
-                data: data.clone().into(),
+                data: data.clone(),
                 timestamp: Utc::now().timestamp(),
             },
         );
-        println!("Refreshed cache for {}", url);
-        Some(data.into())
+        println!("Refreshed cache for {url}");
+        Some(data)
     }
 
     pub async fn get_json(url: &str) -> Option<Value> {
