@@ -20,13 +20,13 @@ main {
     margin-top: 5vh;
 }
 
-.images img {
+.image {
     border-radius: 20px;
     width: 10%;
     transition: 0.5s;
 }
 
-.images img:hover {
+.image:hover {
     transform: scale(1.04);
     transition: 0.5s;
 }

@@ -15,3 +15,7 @@ html, body {
     color: var(--text-color);
     font-family: 'Poppins';
 }
+
+main {
+    background-color: var(--main-color);
+}

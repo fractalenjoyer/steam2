@@ -1,8 +1,11 @@
 use chrono::prelude::*;
-use rocket::{serde::json::Value, tokio::sync::RwLock};
+use rocket::serde::Serialize;
+use rocket::{tokio::sync::RwLock, response::content::RawJson};
+use rocket::serde::json::{Value, serde_json};
 use std::collections::HashMap;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
+#[serde(crate = "rocket::serde")]
 struct CacheItem {
     data: Value,
     timestamp: i64,
@@ -20,11 +23,19 @@ impl Cache {
         }
     }
 
-    pub async fn get(&self, url: &str) -> Option<Value> {
+    pub async fn get_cache(&self) -> RawJson<String> {
+        let cache = self.cache.read().await;
+        RawJson(
+            serde_json::to_string(&*cache)
+                .expect("Failed to serialize cache")
+        )
+    }
+
+    pub async fn get(&self, url: &str, age: i64) -> Option<Value> {
         let cache = self.cache.read().await;
         if let Some(item) = cache.get(url) {
             // If the cache is older than 3 hours, update it
-            if Utc::now().timestamp() - item.timestamp < 60 * 60 * 3 {
+            if Utc::now().timestamp() - item.timestamp < age {
                 return Some(item.data.clone());
             }
         }
@@ -46,7 +57,7 @@ impl Cache {
         Some(data.into())
     }
 
-    async fn get_json(url: &str) -> Option<Value> {
+    pub async fn get_json(url: &str) -> Option<Value> {
         reqwest::get(url).await.ok()?.json::<Value>().await.ok()
     }
 }

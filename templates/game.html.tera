@@ -7,7 +7,7 @@
     <img src='{{ images.0.path_full }}' alt="" class="center-image">
     <div class="images">
         {% for image in images | map(attribute="path_full") %}
-        <img src="{{ image }}" alt="game image" onclick='focusImage("{{ image }}")' />
+        <img src="{{ image }}" alt="game image" onclick='focusImage("{{ image }}")' class="image">
         {% endfor %}
     </div>
     <h2>Price: {{ price }}</h2>
