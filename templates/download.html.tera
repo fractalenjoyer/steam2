@@ -1,4 +1,8 @@
 {% extends "global/base" %}
 {% block content %}
-Here you may be able to download stuff someday
+<main>
+    <img id="logo" src="/static/resources/steam-pictures/steam-logo2.png">
+    <p>Steam är den ultimata platsen för att spela, diskutera och skapa spel</p>
+    <a id="download-button" href="https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe">INSTALL STEAM <i class="fa-brands fa-windows"></i></a>
+</main>
 {% endblock content %}  

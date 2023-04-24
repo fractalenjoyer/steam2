@@ -1,4 +1,14 @@
 {% extends "global/base" %}
 {% block content %}
-We're steam uh, 2.0
+<main>
+    <section>
+        <div></div>
+        <div>
+            <h1>Få tillgång till spel direkt</h1>
+            <p>Med nästan 30 000 spel från AAA till indie och allt däremellan. Njut av exklusiva erbjudanden, automatiska speluppdateringar och andra bra förmåner.</p>
+            <a id="to-store" href="#">Bläddra i butiken <i id="icon" class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <div></div>
+    </section>
+</main>
 {% endblock content %}

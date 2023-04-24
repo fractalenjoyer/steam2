@@ -1,0 +1,15 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+#to-store{
+    color: var(--lightblue);
+}
+
+
+
+#to-store:hover #icon{
+    transition: 0.5s;
+    margin-left: 10px;
+}

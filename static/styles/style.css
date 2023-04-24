@@ -1,14 +1,19 @@
+main{
+    background-color: var(--main-color);
+}
+
 .games {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10vh;
+    padding-bottom: 10vh;
 }
 
 .card img:hover {
     transform: scale(1.04);
     transition: 0.5s;
+    cursor: pointer;
 } 
 
 .card img {

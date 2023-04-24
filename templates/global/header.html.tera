@@ -8,7 +8,7 @@
         <a href="/contact"><p>Contact us</p></a>
 		<div class="search-container">
 			<input id="search" type="text" placeholder="Search" autocomplete="off">
-			<i class="fa-solid fa-magnifying-glass"></i>
+			<i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
 		</div>
 	</nav>
 </header>
