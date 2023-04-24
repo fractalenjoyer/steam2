@@ -1,4 +1,4 @@
 {% extends "global/base" %}
 {% block content %}
-    Call us at 1-800-555-5555
+    Call us at 073 914 15 23 if ever find a bug on the website or email to: alvin.havren@skola.taby.se
 {% endblock content %}
