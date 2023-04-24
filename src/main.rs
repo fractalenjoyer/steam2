@@ -1,8 +1,6 @@
 #[macro_use]
 extern crate rocket;
 
-use std::ops::DerefMut;
-
 use rocket::serde::{json::Value, Serialize};
 use rocket::fs::FileServer;
 use rocket_dyn_templates::{context, Template};
