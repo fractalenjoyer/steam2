@@ -1,3 +1,7 @@
+html, body {
+    background: var(--main-color) !important;
+}
+
 main {
     display: flex;
     flex-direction: column;

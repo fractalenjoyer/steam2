@@ -1,10 +1,10 @@
 #[macro_use]
 extern crate rocket;
 
-use rocket::serde::{json::Value, Serialize};
 use rocket::fs::FileServer;
-use rocket_dyn_templates::{context, Template};
+use rocket::serde::{json::Value, Serialize};
 use rocket::State;
+use rocket_dyn_templates::{context, Template};
 
 mod cache;
 mod pages;
@@ -16,7 +16,17 @@ fn rocket() -> _ {
         .attach(Template::fairing())
         .manage(Cache::new())
         .mount("/static", FileServer::from("static"))
-        .mount("/", routes![index, game, search, pages::download, pages::about, pages::contact])
+        .mount(
+            "/",
+            routes![
+                index,
+                game,
+                search,
+                pages::download,
+                pages::about,
+                pages::contact
+            ],
+        )
 }
 
 // Pages
@@ -43,12 +53,12 @@ async fn index() -> Option<Template> {
 async fn game(cache: &State<Cache>, id: u64) -> Option<Template> {
     // Get data from Steam API
 
-    let data = cache.get(&format!("https://store.steampowered.com/api/appdetails?appids={}&cc=SE", id)).await?;
-    // let data = get_json(&format!(
-    //     "https://store.steampowered.com/api/appdetails?appids={}&cc=SE",
-    //     id
-    // ))
-    // .await?;
+    let data = cache
+        .get(&format!(
+            "https://store.steampowered.com/api/appdetails?appids={}&cc=SE",
+            id
+        ))
+        .await?;
 
     let game = data.get(&id.to_string())?.get("data")?;
 
