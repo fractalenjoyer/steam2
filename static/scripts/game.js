@@ -1,5 +1,6 @@
 const centerimage = document.querySelector(".center-image");
 const focusImage = (image) => {
+    i = images.indexOf(image);
     centerimage.src = image
 }
 
