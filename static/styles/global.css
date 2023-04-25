@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 :root {
-    --main-color: #1b2532;
+    --main-color: #252e39;
+    --secondary-color: #19202b;
     --text-color: #f1f1f1;
     --theyellowone: #ffd400;
     --lightblue: #02A9EA;
@@ -20,3 +21,21 @@ html, body {
 main {
     background-color: var(--main-color);
 }
+
+::-webkit-scrollbar {
+    width: 0.7rem; /* Not to self, change this to 0.5*/
+    background-color: var(--main-color);
+    /* box-shadow: -3px 0 3px 0 #0008; */
+    opacity: 0.1;
+}
+
+::-webkit-scrollbar-track { 
+    box-shadow: -1px 0 1px 0 var(--main-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--theyellowone);
+    border-radius: 0.35rem;
+
+  }
+  

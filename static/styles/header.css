@@ -2,6 +2,9 @@ header {
     width: 100vw;
     height: 300px;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 #nav-bar {
@@ -9,8 +12,9 @@ header {
     opacity: 0.9;
     position: sticky;
     top: 1rem;
-    width: 750px;
+    width: 80vmin;
     height: 3.5rem;
+    overflow-y: hidden;
     margin-top: 50px;
     margin: auto;
     border-radius: 25px;
@@ -18,6 +22,10 @@ header {
     flex-direction: row;
     align-items: center;
     margin-bottom: 5px;
+}
+
+#nav-bar::-webkit-scrollbar {
+    display: none;
 }
 
 #nav-bar .fa-brands {
@@ -63,6 +71,7 @@ header {
 #nav-bar a {
     color: var(--text-color);
     text-decoration: none;
+    white-space: nowrap;
 }
 
 #nav-bar a:hover {
@@ -71,4 +80,9 @@ header {
 
 #nav-bar a p {
     margin-inline: 1rem;
+}
+
+#steam-picture{
+    width: 80vmin;
+    margin: auto;
 }

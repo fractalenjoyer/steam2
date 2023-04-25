@@ -47,7 +47,7 @@ async fn index(cache: &State<Cache>) -> Option<Template> {
         "index",
         context! {
             title: "Store",
-            style: "style.css",
+            style: "index.css",
             specials: parse_games(data.get("specials")?.get("items")?),
             new_releases: parse_games(data.get("new_releases")?.get("items")?),
             top_sellers: parse_games(data.get("top_sellers")?.get("items")?),
