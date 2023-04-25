@@ -1,7 +1,6 @@
 {% extends "global/base" %}
 {% block content %}
 <main>
-    <img id="logo" src="/static/resources/steam-pictures/steam-logo2.png">
     <p id="text-download">Steam is the ultimate destination for playing, discussing, and creating games.</p>
     <a id="download-button" href="https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe">INSTALL STEAM <i class="fa-brands fa-windows"></i></a>
 </main>

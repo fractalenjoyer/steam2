@@ -7,7 +7,9 @@ main{
     color: var(--lightblue);
 }
 
-
+a{
+    text-decoration: none;
+}
 
 #to-store:hover #icon{
     transition: 0.5s;

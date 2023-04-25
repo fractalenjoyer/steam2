@@ -8,7 +8,7 @@ main{
     width: 35%;
     height: 40%;
     margin: auto;
-    border-radius: 5rem;
+    border-radius: 3rem;
     font-size: 1.1rem;
     opacity: 0.9;
     text-align: center;
@@ -17,9 +17,7 @@ main{
 #text-download{
   margin: 0 1rem;  
 }
-#logo{
-    height: 100px;
-}
+
 #download-button{
     background-color: var(--lightblue);
     padding: 10px;

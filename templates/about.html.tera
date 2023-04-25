@@ -4,9 +4,9 @@
     <section>
         <div></div>
         <div>
-            <h1>Få tillgång till spel direkt</h1>
-            <p>Med nästan 30 000 spel från AAA till indie och allt däremellan. Njut av exklusiva erbjudanden, automatiska speluppdateringar och andra bra förmåner.</p>
-            <a id="to-store" href="/">Bläddra i butiken <i id="icon" class="fa-solid fa-arrow-right-long"></i></a>
+            <h1>Access Games Instantly</h1>
+            <p>With nearly 30,000 games from AAA to indie and everything in-between. Enjoy exclusive deals, automatic game updates, and other great perks.</p>
+            <a id="to-store" href="/">Browse the Store <i id="icon" class="fa-solid fa-arrow-right-long"></i></a>
         </div>
         <div></div>
     </section>
