@@ -2,13 +2,13 @@
 {% block content %}
 <main>
     <section>
-        <div></div>
-        <div>
+        <div class="games-column" id="left-games-column">Lorem Ipsum</div>
+        <div id="middle-container">
             <h1>Access Games Instantly</h1>
             <p>With nearly 30,000 games from AAA to indie and everything in-between. Enjoy exclusive deals, automatic game updates, and other great perks.</p>
             <a id="to-store" href="/">Browse the Store <i id="icon" class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-        <div></div>
+        <div class="games-column" id="right-games-column">Lorem Ipsum</div>
     </section>
 </main>
 {% endblock content %}

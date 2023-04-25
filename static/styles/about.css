@@ -1,7 +1,12 @@
 main{
     display: flex;
     flex-direction: column;
-    align-items:center;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 #to-store{
     color: var(--lightblue);
@@ -14,4 +19,9 @@ a{
 #to-store:hover #icon{
     transition: 0.5s;
     margin-left: 10px;
+}
+
+#middle-container{
+    flex-grow: 2;
+    width: 20rem;
 }
