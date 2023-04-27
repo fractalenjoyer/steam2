@@ -165,8 +165,10 @@ nav .fa-xmark {
 }
 
 #steam-picture {
-	width: 80vmin;
 	margin: auto;
+}
+#steam-picture img {
+	width: 80vmin;
 }
 
 i {

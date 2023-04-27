@@ -1,15 +1,11 @@
 main{
     display: flex;
-    flex-direction: column;
-    height:100%;
-}
-
-section{
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
 }
+
+
 #to-store{
     color: var(--lightblue);
 }
@@ -26,6 +22,7 @@ a{
 #middle-container{
     flex-grow: 2;
     width: 20rem;
+    margin: 1rem;
 }
 
 .games-column{
@@ -33,7 +30,9 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: left;
+    box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);  
+    border: solid var(--main-color);
 }
-.pictures-about{
-    width: 50%;
-}
+

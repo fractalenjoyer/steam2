@@ -39,3 +39,14 @@ main {
 .description, .description img {
     width: 100%;
 }
+
+#game-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-angle-right, .fa-angle-left {
+    padding: 10px;
+    font-size: 40px;
+}

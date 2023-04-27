@@ -4,7 +4,11 @@
 <script defer src="/static/scripts/game.js"></script>
 <main>
     <h1> {{ name }} </h1>
-    <img src='{{ images.0.path_full }}' alt="" class="center-image">
+    <div id="game-image-container">
+        <i class="fa-solid fa-angle-left" onclick="prevImage()"></i>
+        <img src='{{ images.0.path_full }}' alt="" class="center-image">
+        <i class="fa-solid fa-angle-right" onclick="nextImage()"></i>
+    </div>
     <div class="images">
         {% for image in images | map(attribute="path_full") %}
         <img src="{{ image }}" alt="game image" onclick='focusImage("{{ image }}")' class="image">

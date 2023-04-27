@@ -18,5 +18,5 @@
 		</form>
 	</nav>
 	<i class="fa-solid fa-bars" onclick="showmenu()"></i>
-	<img id="steam-picture" src="/static/resources/steam-pictures/steam-logo2.png">
+	<a href="/" id="steam-picture"><img src="/static/resources/steam-pictures/steam-logo2.png"></a>
 </header>
