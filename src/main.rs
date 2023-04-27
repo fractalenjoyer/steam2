@@ -60,11 +60,12 @@ async fn index(cache: &State<Cache>) -> Option<Template> {
 async fn game(cache: &State<Cache>, id: u64) -> Option<Template> {
     // Get data from Steam API
 
+    static FILTERS: &str = "basic,price_overview,screenshots";
+
     let data = cache
         .get(
             &format!(
-                "https://store.steampowered.com/api/appdetails?appids={}&cc=SE",
-                id
+                "https://store.steampowered.com/api/appdetails?filters={FILTERS}&appids={id}&cc=SE",
             ),
             10800,
         )
@@ -95,12 +96,12 @@ async fn game(cache: &State<Cache>, id: u64) -> Option<Template> {
     ))
 }
 
-#[get("/search/<query>")]
-async fn search(query: String) -> Option<Template> {
+#[get("/search?<q>")]
+async fn search(q: String) -> Option<Template> {
     // Get data from Steam API
     let data = Cache::get_json(&format!( // yes this namespace is horrible
         "https://store.steampowered.com/search/suggest?cc=SE&f=jsonfull&term={}&require_type=game,software",
-        query
+        q
     ))
     .await?;
 
@@ -110,7 +111,7 @@ async fn search(query: String) -> Option<Template> {
             title: "Search",
             style: "search.css",
             games: data, // yeah that won't work lmao,
-            query: query,
+            query: q,
         },
     ))
 }

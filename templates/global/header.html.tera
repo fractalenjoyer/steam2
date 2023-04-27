@@ -8,8 +8,13 @@
         <a href="/contact"><p>Contact us</p></a>
 		<div class="flex-grow"></div>
 		<div class="search-container">
-			<input id="search" type="text" placeholder="Search" autocomplete="off">
-			<i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+			<form action="/search" method="get">
+				<input id="search" type="text" placeholder="Search" autocomplete="off" name="q">
+				<label>
+					<button type="submit" hidden></button>
+					<i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+				</label>
+			</form>
 		</div>
 		
 	</nav>
