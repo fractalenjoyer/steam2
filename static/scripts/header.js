@@ -1,7 +1,7 @@
 function showmenu() {
-	navbar.style.right = "0vw";
+	navbar.style.left = "0px";
 }
 
 function hidemenu() {
-    navbar.style.right = "-250px";
+    navbar.style.left = "-250px";
 }

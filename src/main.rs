@@ -100,8 +100,7 @@ async fn game(cache: &State<Cache>, id: u64) -> Option<Template> {
 async fn search(q: String) -> Option<Template> {
     // Get data from Steam API
     let data = Cache::get_json(&format!( // yes this namespace is horrible
-        "https://store.steampowered.com/search/suggest?cc=SE&f=jsonfull&term={}&require_type=game,software",
-        q
+        "https://store.steampowered.com/search/suggest?cc=SE&f=jsonfull&term={q}&require_type=game,software"
     ))
     .await?;
 
