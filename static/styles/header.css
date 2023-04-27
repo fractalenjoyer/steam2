@@ -92,3 +92,7 @@ header {
     width: 80vmin;
     margin: auto;
 }
+
+i{
+    cursor: pointer;
+}
