@@ -38,6 +38,8 @@ main {
     max-width: 80vw;
 }
 
+
+
 @media only screen and (max-width: 768px) {
     .specials, .top-sellers, .new, .upcoming {
         grid-template-columns: 1fr;

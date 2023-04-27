@@ -1,12 +1,14 @@
 main{
     display: flex;
     flex-direction: column;
+    height:100%;
 }
 
 section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-align: center;
 }
 #to-store{
     color: var(--lightblue);
@@ -24,4 +26,14 @@ a{
 #middle-container{
     flex-grow: 2;
     width: 20rem;
+}
+
+.games-column{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.pictures-about{
+    width: 50%;
 }

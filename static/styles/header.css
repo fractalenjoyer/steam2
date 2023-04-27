@@ -1,98 +1,174 @@
 header {
-    width: 100vw;
-    height: 300px;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-
+	width: 100vw;
+	height: 300px;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
 }
 
-#nav-bar {
-    background-color: var(--main-color);
-    opacity: 0.9;
-    position: sticky;
-    top: 1rem;
-    width: 100vmin;
-    height: 3.5rem;
-    overflow-y: hidden;
-    margin-top: 50px;
-    margin: auto;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 5px;
+#navbar {
+	background-color: var(--main-color);
+	opacity: 0.9;
+	position: sticky;
+	top: 1rem;
+	width: 100vmin;
+	height: 3.5rem;
+	/* overflow-y: hidden; */
+    min-width: fit-content;
+	margin-top: 50px;
+	margin: auto;
+	border-radius: 25px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.fa-bars,
+nav .fa-xmark {
+	display: none;
 }
 
 @media only screen and (max-width: 768px) {
-    #nav-bar {
-        width: 80vw;
+	html, body {
+		overflow-x: hidden;
+	}
+
+	body {
+		position: relative;
+	}
+
+	.flex-grow {
+		flex-grow: 0 !important;
+	}
+
+	#navbar {
+		position: absolute;
+		top: 0;
+		right: -100vw;
+		text-align: left;
+		background-color: var(--main-color);
+		height: 100vh;
+		width: 200px;
+		z-index: 2;
+		transition: 0.5s;
+		flex-direction: column;
+		opacity: 1;
+		align-items: unset;
+		border-radius: 0;
+        box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+	    -webkit-box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+	    -moz-box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);  
+    }
+
+	#navbr a {
+        margin-top: 10px;
+	}       
+
+    #steam-logo {
+        padding: 13px 0px;
+    }
+
+	nav .fa-xmark {
+		display: block;
+		color: white;
+		margin: 15px;
+		font-size: 22px;
+		cursor: pointer;
+	}
+
+	.fa-bars {
+		display: block;
+		color: white;
+		margin: 15px;
+		font-size: 22px;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+    
+    .search-container {
+        order: -1;
+        width: 70%;
+        margin: 10px 0 0 1rem;
+    }
+    .search-container input {
+        width: 100%;
+    }
+
+    .fa-xmark {
+        order: -3;
+    }
+
+    #steam-logo {
+        order: -2;
     }
 }
 
-#nav-bar::-webkit-scrollbar {
+/* #navbar::-webkit-scrollbar {
     display: none;
-}
+} */
 
-#nav-bar .fa-brands {
-    font-size: 40px;
-    margin-left: 0.6rem;
+#navbar .fa-brands {
+	font-size: 40px;
+	margin-left: 0.6rem;
 }
 
 .flex-grow {
-    flex-grow: 1;
+	flex-grow: 1;
 }
 
 /*Search bar*/
 .search-container {
-    display: flex;
-    align-items: center;
-    border: none;
-    border-radius: 20px;
-    height: 1.5rem;
-    margin-right: 0.5rem;
-    padding: 10px;
-    background-color: var(--main-color);
-    transition: 0.5s;
-    box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
+	display: flex;
+	align-items: center;
+	border: none;
+	border-radius: 20px;
+	height: 1.5rem;
+	margin-right: 0.5rem;
+	padding: 10px;
+	background-color: var(--main-color);
+	transition: 0.5s;
+	box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.75);
 }
 
-.search-container:hover{
-    transform: scale(1.05, 1.1);
-    /* background-color: var(--theyellowone); */
+.search-container:hover {
+	transform: scale(1.05, 1.1);
+	/* background-color: var(--theyellowone); */
 }
 
 #search {
-    color: var(--text-color);
-    background-color: #0000;
-    border: none;
+	color: var(--text-color);
+	background-color: #0000;
+	border: none;
 }
 
-#search:focus{
-    outline:none;
+#search:focus {
+	outline: none;
 }
 
-#nav-bar a {
-    color: var(--text-color);
-    text-decoration: none;
-    white-space: nowrap;
+#navbar a {
+	color: var(--text-color);
+	text-decoration: none;
+	white-space: nowrap;
 }
 
-#nav-bar a:hover {
-    color: var(--theyellowone);
+#navbar a:hover {
+	color: var(--theyellowone);
 }
 
-#nav-bar a p {
-    margin-inline: 1rem;
+#navbar a p {
+	margin-inline: 1rem;
 }
 
-#steam-picture{
-    width: 80vmin;
-    margin: auto;
+#steam-picture {
+	width: 80vmin;
+	margin: auto;
 }
 
-i{
-    cursor: pointer;
+i {
+	cursor: pointer;
 }

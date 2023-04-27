@@ -1,7 +1,9 @@
 <header>
     <link rel="stylesheet" href="/static/styles/header.css">
-	<nav id="nav-bar">
-		<a href="/"><i class="fa-brands fa-steam"></i></a>
+	<script defer src="/static/scripts/header.js"></script>
+	<nav id="navbar">
+		<i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
+		<a href="/" id="steam-logo"><i class="fa-brands fa-steam"></i></a>
         <a href="/"><p>Store</p></a>
         <a href="/download"><p>Download</p></a>
 		<a href="/about"><p>About</p></a>
@@ -14,7 +16,7 @@
 				<i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
 			</label>
 		</form>
-		
 	</nav>
+	<i class="fa-solid fa-bars" onclick="showmenu()"></i>
 	<img id="steam-picture" src="/static/resources/steam-pictures/steam-logo2.png">
 </header>
