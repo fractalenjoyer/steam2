@@ -60,11 +60,12 @@ async fn index(cache: &State<Cache>) -> Option<Template> {
 async fn game(cache: &State<Cache>, id: u64) -> Option<Template> {
     // Get data from Steam API
 
+    static FILTERS: &str = "basic,price_overview,screenshots";
+
     let data = cache
         .get(
             &format!(
-                "https://store.steampowered.com/api/appdetails??filters=basic,price_overview,screenshots&appids={}&cc=SE",
-                id
+                "https://store.steampowered.com/api/appdetails?filters={FILTERS}&appids={id}&cc=SE",
             ),
             10800,
         )
