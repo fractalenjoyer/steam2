@@ -35,3 +35,7 @@ main {
     border-radius: 20px;
     width: 70vw;
 }
+
+.description, .description img {
+    width: 100%;
+}

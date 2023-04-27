@@ -7,15 +7,13 @@
 		<a href="/about"><p>About</p></a>
         <a href="/contact"><p>Contact us</p></a>
 		<div class="flex-grow"></div>
-		<div class="search-container">
-			<form action="/search" method="get">
-				<input id="search" type="text" placeholder="Search" autocomplete="off" name="q">
-				<label>
-					<button type="submit" hidden></button>
-					<i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
-				</label>
-			</form>
-		</div>
+		<form action="/search" method="get" class="search-container">
+			<input id="search" type="text" placeholder="Search" autocomplete="off" name="q">
+			<label>
+				<button type="submit" hidden></button>
+				<i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+			</label>
+		</form>
 		
 	</nav>
 	<img id="steam-picture" src="/static/resources/steam-pictures/steam-logo2.png">
