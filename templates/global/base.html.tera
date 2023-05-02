@@ -8,6 +8,7 @@
     <link rel="icon" href="/static/resources/steam-pictures/steam.png">
     <link rel="stylesheet" href='/static/styles/{{ style }}'>
     <link rel="stylesheet" href="/static/styles/global.css">
+    <script defer src="/static/scripts/global.js"></script>
     <title>{{ title }} - Steam 2.0</title>
 </head>
 <body>

@@ -1,7 +1,6 @@
 {% extends "global/base" %}
 {% block content %}
 <main>
-    <section>
         <div class="games-column" id="left-games-column">
             <img class="pictures-about" src="/static/resources/game-folder/black-dessert.jpg" data-rellax-speed="7">
             <img class="pictures-about" src="/static/resources/game-folder/cs.jpg">
@@ -10,11 +9,16 @@
             <img class="pictures-about" src="/static/resources/game-folder/pubg.jpg">
         </div>
         <div id="middle-container">
-            <div>
-                <h1>Access Games Instantly</h1>
-                <p>With nearly 30,000 games from AAA to indie and everything in-between. Enjoy exclusive deals, automatic game updates, and other great perks.</p>
-                <a id="to-store" href="/">Browse the Store <i id="icon" class="fa-solid fa-arrow-right-long"></i></a>
-            </div>
+            <section>
+                <h2>Access Games Instantly</h2>
+                <p class="text-description">With nearly 30,000 games from AAA to indie and everything in-between. Enjoy exclusive deals, automatic game updates, and other great perks.</p>
+                <a class="link" href="/"><p class="link-text">Browse the Store</p> <i class="fa-solid fa-arrow-right-long"></i></a>
+            </section>
+            <section>
+                <h2>Join the Community</h2>
+                <p class="text-description">Meet new people, join groups, form clans, chat in-game and more! With over 100 million potential friends (or enemies), the fun never stops.</p>      
+                <a class="link" href="https://steamcommunity.com/"><p class="link-text">Visit the community</p> <i class="fa-solid fa-arrow-right-long"></i></a>
+            </section>
             
       
         </div>
@@ -25,6 +29,5 @@
             <img class="pictures-about" src="/static/resources/game-folder/stranded.jpg">
             <img class="pictures-about" src="/static/resources/game-folder/warthunder.jpg">
         </div>
-    </section>
 </main>
 {% endblock content %}

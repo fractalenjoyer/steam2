@@ -24,10 +24,15 @@ header {
 	margin-bottom: 5px;
 }
 
-.fa-bars,
-nav .fa-xmark {
+.fa-bars, nav .fa-xmark {
 	display: none;
 }
+
+.fa-steam:hover {
+	animation: rotation 0.5s infinite linear;
+}
+
+
 
 @media only screen and (max-width: 768px) {
 	html, body {
@@ -61,9 +66,16 @@ nav .fa-xmark {
 	    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);  
     }
 
-	#navbr a {
-        margin-top: 10px;
-	}       
+	#blocker {
+		display: none;
+		width: 100vw;
+		height: 100vh;
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
     #steam-logo {
 		margin-inline: auto;
@@ -178,4 +190,13 @@ nav .fa-xmark {
 
 i {
 	cursor: pointer;
+}
+
+@keyframes rotation {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	  transform: rotate(359deg);
+	}
 }

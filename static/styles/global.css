@@ -7,6 +7,14 @@
 	--lightblue: #02a9ea;
 }
 
+:root:has(#darkmode:checked) {
+	--main-color: #f1f1f1;
+	--secondary-color: #f1f1f1;
+	--text-color: #252e39;
+	--theyellowone: #ffd400;
+	--lightblue: #02a9ea;
+}
+
 html,
 body {
 	width: 100%;

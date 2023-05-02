@@ -1,13 +1,15 @@
 <header>
     <link rel="stylesheet" href="/static/styles/header.css">
 	<script defer src="/static/scripts/header.js"></script>
+	<div id="blocker"></div>
 	<nav id="navbar">
 		<i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
 		<a href="/" id="steam-logo"><i class="fa-brands fa-steam"></i></a>
-        <a href="/"><p>Store</p></a>
-        <a href="/download"><p>Download</p></a>
+		<a href="/"><p>Store</p></a>
+		<a href="/download"><p>Download</p></a>
 		<a href="/about"><p>About</p></a>
-        <a href="/contact"><p>Contact us</p></a>
+		<a href="/contact"><p>Contact us</p></a>
+		<input type="checkbox" name="brr" id="darkmode">
 		<div class="flex-grow"></div>
 		<form action="/search" method="get" class="search-container">
 			<input id="search" type="text" placeholder="Search" autocomplete="off" name="q">

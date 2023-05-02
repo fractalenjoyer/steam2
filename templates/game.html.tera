@@ -3,6 +3,7 @@
 {% block content %}
 <script defer src="/static/scripts/game.js"></script>
 <main>
+    <input type="checkbox" name="brr" id="darkmode" hidden>
     <h1> {{ name }} </h1>
     <div id="game-image-container">
         <i class="fa-solid fa-angle-left" onclick="prevImage()"></i>

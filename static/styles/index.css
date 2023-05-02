@@ -30,7 +30,7 @@ main {
     text-align: center;
 }
 
-.specials, .top-sellers, .new, .upcoming{
+.specials, .top-sellers, .new, .upcoming {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
