@@ -61,9 +61,9 @@ header {
 		opacity: 1;
 		align-items: unset;
 		border-radius: 0;
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-	    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-	    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);  
+        box-shadow: 0px 0px 20px 0px var(--secondary-color);
+	    -webkit-box-shadow: 0px 0px 20px 0px var(--secondary-color);
+	    -moz-box-shadow: 0px 0px 20px 0px var(--secondary-color);  
     }
 
 	#blocker {
@@ -147,9 +147,9 @@ header {
 	padding: 10px;
 	background-color: var(--main-color);
 	transition: 0.5s;
-	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 20px 0px var(--secondary-color);
+	-webkit-box-shadow: 0px 0px 20px 0px var(--secondary-color);
+	-moz-box-shadow: 0px 0px 20px 0px var(--secondary-color);
 }
 
 .search-container:hover {
