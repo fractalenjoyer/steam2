@@ -31,6 +31,7 @@ body {
 
 body::before {
 	background: url("/static/resources/steam-pictures/space-hero.jpg");
+	background-size: cover;
 	content: "";
 	position: fixed;
 	top: 0;
