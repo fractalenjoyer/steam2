@@ -25,7 +25,6 @@ main{
     transition: 0.5s;
     margin: 15px;
     opacity: 1;
-
 }
 
 #download-button:hover{
@@ -35,4 +34,18 @@ main{
 a{
     text-decoration: none;
     color: var(--text-color)
+}
+
+
+@media only screen and (max-width: 768px) {
+    main {
+        margin-top: 4rem;
+        width: 80%;
+        height: 30%;
+    }
+
+    #download-button {
+        padding: 20px;
+    }
+
 }

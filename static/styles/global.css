@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
+
+/*Dark mode*/
 :root {
 	--main-color: #252e39;
 	--secondary-color: #161b21;
@@ -7,12 +9,13 @@
 	--lightblue: #02a9ea;
 }
 
+/*Light Mode*/
 :root:has(#darkmode:checked) {
 	--main-color: #f1f1f1;
 	--secondary-color: #b9b9b9;
 	--text-color: #252e39;
-	--theyellowone: #ffd400;
-	--lightblue: #02a9ea;
+	--theyellowone: #E94F37;
+	--lightblue: #736CED;
 }
 
 html,
@@ -38,7 +41,7 @@ body::before {
 }
 
 body:has(#darkmode:checked)::before {
-	background: url("https://media.discordapp.net/attachments/786580397231308800/1102947016310521886/2124358.png");
+	background: url("/static/resources/steam-pictures/space-hero-light.png");
 	filter: brightness(0.95);
 }
 
