@@ -14,6 +14,7 @@ header {
 	width: 100vmin;
 	height: 3.5rem;
 	/* overflow-y: hidden; */
+	z-index: 2;
     min-width: fit-content;
 	margin-top: 50px;
 	margin: auto;
@@ -55,7 +56,6 @@ header {
 		background-color: var(--main-color);
 		height: 100vh;
 		width: 150px;
-		z-index: 2;
 		transition: 0.5s;
 		flex-direction: column;
 		opacity: 1;

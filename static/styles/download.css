@@ -12,10 +12,11 @@ main{
     font-size: 1.1rem;
     opacity: 0.9;
     text-align: center;
+    margin-bottom: 7rem;
 }
 
 #text-download{
-  margin: 0 1rem;  
+  margin: 1rem;  
 }
 
 #download-button{
@@ -46,6 +47,10 @@ a{
 
     #download-button {
         padding: 20px;
+    }
+
+    #text-download{
+        font-size: 15px;
     }
 
 }

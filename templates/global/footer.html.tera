@@ -8,11 +8,11 @@
         <a href="https://www.facebook.com/Steam/?locale=sv_SE" target="_blank"><i class="fa-brands fa-facebook"></i></a>
     </div>
     <div id="footer-links">
-        <a href="">Home</a>
-        <a href="">Services</a>
-        <a href="">About</a>
-        <a href="">Terms</a>
-        <a href="">Privacy Policy</a>
+        <a href="/store">Home</a>
+        <a href="/about">Services</a>
+        <a href="/about">About</a>
+        <a href="https://store.steampowered.com/eula/471710_eula_0">Terms</a>
+        <a href="https://store.steampowered.com/privacy_agreement/?snr=1_44_44_">Privacy Policy</a>
     </div>
     <p id="disclaimer">All product and company names as well as logos are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them. </p>
 </footer>
