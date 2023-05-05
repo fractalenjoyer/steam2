@@ -8,7 +8,7 @@
         <a href="https://www.facebook.com/Steam/?locale=sv_SE" target="_blank"><i class="fa-brands fa-facebook"></i></a>
     </div>
     <div id="footer-links">
-        <a href="/store">Home</a>
+        <a href="/">Home</a>
         <a href="/about">Services</a>
         <a href="/about">About</a>
         <a href="https://store.steampowered.com/eula/471710_eula_0">Terms</a>

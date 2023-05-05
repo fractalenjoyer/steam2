@@ -59,4 +59,8 @@ footer .fa-brands {
     #footer-links a{
         margin: 1rem 0px;
     }
+
+    #disclaimer{
+        margin: 2rem;
+    }
 }
