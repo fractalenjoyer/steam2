@@ -122,6 +122,10 @@ header {
     #steam-logo {
         order: -2;
     }
+	#label-dark-light{
+		margin: 10px 0 0 1rem;
+		font-size: 22px;
+	}
 }
 
 /* #navbar::-webkit-scrollbar {
@@ -200,4 +204,18 @@ i {
 	to {
 	  transform: rotate(359deg);
 	}
+}
+
+#darkmode{
+	display:none;
+}
+#label-dark-light{
+	margin-right: 1rem;
+	font-size: 20px;
+}
+
+#label-dark-light:hover {
+	filter: brightness(130%);
+	color: var(--theyellowone);
+	transition: 0.7s;
 }

@@ -9,7 +9,10 @@
 		<a href="/download"><p>Download</p></a>
 		<a href="/about"><p>About</p></a>
 		<a href="/contact"><p>Contact us</p></a>
-		<input type="checkbox" name="brr" id="darkmode">
+		<label id="label-dark-light">
+			<input type="checkbox" name="brr" id="darkmode">
+			<i class="fa-solid fa-lightbulb"></i>
+		</label>
 		<div class="flex-grow"></div>
 		<form action="/search" method="get" class="search-container">
 			<input id="search" type="text" placeholder="Search" autocomplete="off" name="q">
