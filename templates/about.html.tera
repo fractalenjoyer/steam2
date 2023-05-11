@@ -2,11 +2,11 @@
 {% block content %}
 <main>
         <div class="games-column" id="left-games-column">
-            <img class="pictures-about" src="/static/resources/game-folder/black-dessert.jpg" data-rellax-speed="7">
-            <img class="pictures-about" src="/static/resources/game-folder/cs.jpg">
-            <img class="pictures-about" src="/static/resources/game-folder/jedi-survivor.jpg">
-            <img class="pictures-about" src="/static/resources/game-folder/lostark.jpg">
-            <img class="pictures-about" src="/static/resources/game-folder/pubg.jpg">
+            <img class="pictures-about" src="/static/resources/game-folder/black-dessert.jpg" alt="Black Desert picture">
+            <img class="pictures-about" src="/static/resources/game-folder/cs.jpg" alt="CS picture">
+            <img class="pictures-about" src="/static/resources/game-folder/jedi-survivor.jpg" alt="Jedi Survivor picture">
+            <img class="pictures-about" src="/static/resources/game-folder/lostark.jpg" alt="Lost Ark picture">
+            <img class="pictures-about" src="/static/resources/game-folder/pubg.jpg" alt="PUBG picture">
         </div>
         <div id="middle-container">
             <section>
@@ -23,11 +23,11 @@
       
         </div>
         <div class="games-column" id="right-games-column">
-            <img class="pictures-about" src="/static/resources/game-folder/roots-of-pacha.jpg">
-            <img class="pictures-about" src="/static/resources/game-folder/seaoftheives.jpg">
-            <img class="pictures-about" src="/static/resources/game-folder/shadows.jpg">
-            <img class="pictures-about" src="/static/resources/game-folder/stranded.jpg">
-            <img class="pictures-about" src="/static/resources/game-folder/warthunder.jpg">
+            <img class="pictures-about" src="/static/resources/game-folder/roots-of-pacha.jpg" alt="Roots of Pacha picture">
+            <img class="pictures-about" src="/static/resources/game-folder/seaoftheives.jpg" alt="Sea of Theives picture">
+            <img class="pictures-about" src="/static/resources/game-folder/shadows.jpg" alt="Shadows picture">
+            <img class="pictures-about" src="/static/resources/game-folder/stranded.jpg" alt="Stranded picture">
+            <img class="pictures-about" src="/static/resources/game-folder/warthunder.jpg" alt="War Thunder picture">
         </div>
 </main>
 {% endblock content %}
