@@ -2,7 +2,7 @@
 <script defer src="/static/scripts/index.js"></script>
 <main>
 	<div class="modal">
-		<iframe src="" frameborder="0" class="modal-content"></iframe>
+		<iframe frameborder="0" class="modal-content"></iframe>
 	</div>
 	<section class="games">
 		<h1 class="headerstyle">S P E C I A L S</h1>

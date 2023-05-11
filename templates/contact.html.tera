@@ -15,5 +15,5 @@
         <button type="submit" id="submitbutton">Send Message</button>
         </form>
     </section>
-<main>
+</main>
 {% endblock content %}

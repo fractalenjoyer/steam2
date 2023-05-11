@@ -4,7 +4,7 @@
 <script defer src="/static/scripts/search.js"></script>
 <main>
     <div class="modal">
-		<iframe src="" frameborder="0" class="modal-content"></iframe>
+		<iframe frameborder="0" class="modal-content"></iframe>
 	</div>
     <h1 id="search-query">Results for: "{{ query }}"</h1>
     <section class="games">
