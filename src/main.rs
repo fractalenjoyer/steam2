@@ -16,6 +16,7 @@ fn rocket() -> _ {
     rocket::build()
         .attach(Template::fairing())
         .manage(Cache::new())
+        .attach(Cache::fairing())
         .mount("/static", FileServer::from("static"))
         .mount(
             "/",
