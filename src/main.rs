@@ -15,8 +15,7 @@ use cache::Cache;
 fn rocket() -> _ {
     rocket::build()
         .attach(Template::fairing())
-        .manage(Cache::new())
-        .attach(Cache::fairing())
+        .attach(Cache::fairing(5 * 60))
         .mount("/static", FileServer::from("static"))
         .mount(
             "/",

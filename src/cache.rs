@@ -1,8 +1,8 @@
 use chrono::prelude::*;
 use rocket::fairing::Fairing;
+use rocket::serde::json::{serde_json, Value};
 use rocket::serde::Serialize;
-use rocket::{tokio::sync::RwLock, response::content::RawJson};
-use rocket::serde::json::{Value, serde_json};
+use rocket::{response::content::RawJson, tokio::sync::RwLock};
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -30,16 +30,14 @@ impl Cache {
 
     pub async fn get_cache(&self) -> RawJson<String> {
         let cache = self.cache.read().await;
-        RawJson(
-            serde_json::to_string(&*cache)
-                .expect("Failed to serialize cache")
-        )
+        RawJson(serde_json::to_string(&*cache).expect("Failed to serialize cache"))
     }
 
     pub async fn get(&self, url: &str, age: i64) -> Option<Value> {
         let cache = self.cache.read().await;
         if let Some(item) = cache.get(url) {
             // If the cached item is not older than the specified age
+            // return the cached data, otherwise update the cache
             if Utc::now().timestamp() - item.timestamp < age {
                 return Some(item.data.clone());
             }
@@ -66,33 +64,56 @@ impl Cache {
         reqwest::get(url).await.ok()?.json::<Value>().await.ok()
     }
 
-    pub fn fairing() -> impl Fairing {
-        // Provides a fairing that will clear the cache every 5 minutes
-        // This is a bit of a hack, but it works
-        rocket::fairing::AdHoc::on_liftoff("Cache", |rocket| Box::pin(async {
-            if let Some(cache) = rocket.state::<Cache>() {
-                spawn(Self::garbage_collector(cache.cache.clone()));
-            } else {
-                panic!("Cache fairing failed")
-            }
-        }))
+    pub fn fairing(interval: u64) -> impl Fairing {
+        Initializer::new(interval)
     }
 
-    async fn garbage_collector(cache: Arc<RwLock<HashMap<String, CacheItem>>>) {
-        // Clear old cache items every 5 minutes
+    async fn garbage_collector(cache: Arc<RwLock<HashMap<String, CacheItem>>>, interval: Duration) {
+        // Clear old cache items at a specified interval
         loop {
-            sleep(Duration::from_secs(5 * 60)).await;
+            sleep(interval).await;
             let mut cache = cache.write().await;
 
             let length = cache.len();
             let current_time = Utc::now().timestamp();
 
-            cache.retain(|_, item: &mut CacheItem| {
-                current_time - item.timestamp < 10800
-            });
+            cache.retain(|_, item: &mut CacheItem| current_time - item.timestamp < 10800);
 
             println!("Cleared cache, {} items removed", length - cache.len());
         }
     }
 }
 
+struct Initializer {
+    interval: Duration,
+}
+
+impl Initializer {
+    pub fn new(interval: u64) -> Self {
+        Self {
+            interval: Duration::from_secs(interval),
+        }
+    }
+}
+
+#[rocket::async_trait]
+impl Fairing for Initializer {
+    fn info(&self) -> rocket::fairing::Info {
+        rocket::fairing::Info {
+            name: "Cache",
+            kind: rocket::fairing::Kind::Ignite | rocket::fairing::Kind::Liftoff,
+        }
+    }
+
+    async fn on_ignite(&self, rocket: rocket::Rocket<rocket::Build>) -> rocket::fairing::Result {
+        Ok(rocket.manage(Cache::new()))
+    }
+
+    async fn on_liftoff(&self, rocket: &rocket::Rocket<rocket::Orbit>) {
+        if let Some(cache) = rocket.state::<Cache>() {
+            spawn(Cache::garbage_collector(cache.cache.clone(), self.interval));
+        } else {
+            panic!("Cache fairing failed");
+        }
+    }
+}
